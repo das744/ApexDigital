@@ -1,16 +1,24 @@
 
-import './App.css';
+import './scss/css/App.css';
 
-function App() {
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <h1>Welcome to my website</h1>
-       
-    
-      </header>
-    </div>
+    <Router>
+    <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      
+      </Routes>
+      <footer>©2023-2077 React Router.</footer>
+    </Router>
   );
 }
 
